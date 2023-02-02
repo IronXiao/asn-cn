@@ -32,11 +32,7 @@ def read_all_asn_form_net(url):
         ''' <td><a href="/AS133492"
         <a href="/AS63582" title
         '''
-        strs = re.findall(r'<a href="/AS\d+" title', r.text)
-        for str in strs:
-            result = re.search(r'\d+', str).group()
-            print('asn', result)
-            asns.append(result)
+        asns = re.findall(r'<a href="/AS(\d+)" title', r.text)
     except:
         return []
     asns = list(dict.fromkeys(asns))
