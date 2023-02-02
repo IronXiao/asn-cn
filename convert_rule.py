@@ -60,7 +60,7 @@ def gen_rules(asns):
     rules = []
     for asn in asns:
         rules.append(gen_rule(asn))
-    return rules    
+    return rules
 
 def write_rules_to_file(rules, file_path):
     if rules:
