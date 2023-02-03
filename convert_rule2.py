@@ -36,6 +36,7 @@ def read_all_asn_form_net(url):
     except:
         return []
     asns = list(dict.fromkeys(asns))
+    asns.sort(key=int)
     return asns
 
 def gen_rule(asn):

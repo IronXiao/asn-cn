@@ -49,6 +49,7 @@ def read_all_asn_form_file(file):
                 result = re.search(r'\d+', line).group()
                 all_asn.append(result)
     all_asn = list(dict.fromkeys(all_asn))
+    all_asn.sort(key=int)
     return all_asn
 
 
