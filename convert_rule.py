@@ -17,16 +17,14 @@ RULE_FILE_NAME = 'asn_cn.list'
 
 def main():
     print('正在下载ASN 文件... ...')
-    result = download_file_from_net(ASN_DOWNLOAD_PATH, ASN_FILE_NAME)
+    result = read_all_asn_form_net(ASN_DOWNLOAD_PATH)
     if result:
         print('ASN 文件下载成功！')
-        all_asn = read_all_asn_form_file(ASN_FILE_NAME)
-        rules = gen_rules(all_asn)
+        # all_asn = read_all_asn_form_file(ASN_FILE_NAME)
+        rules = gen_rules(result)
         write_rules_to_file(rules, RULE_FILE_NAME)
     else:
         print('ASN 文件下载失败，请检查网络！！！')
-
-
 
 def download_file_from_net(url, save_path):
     try:
@@ -52,7 +50,21 @@ def read_all_asn_form_file(file):
     all_asn.sort(key=int)
     return all_asn
 
-
+def read_all_asn_form_net(url):
+    all_asn = []
+    try:
+        r = requests.get(url, timeout=15)
+        text = r.text
+        r.close()
+        for line in text.splitlines():
+            if line.startswith('IP-ASN'):
+                result = re.search(r'\d+', line).group()
+                all_asn.append(result)
+    except:
+        return None
+    all_asn = list(dict.fromkeys(all_asn))
+    all_asn.sort(key=int)
+    return all_asn
 
 def gen_rule(asn):
     return RULE_SAMPLE.format(asn)
