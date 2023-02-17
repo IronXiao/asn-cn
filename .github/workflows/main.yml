@@ -33,5 +33,5 @@ jobs:
         git config --global user.name 'action-bot'
         git config --global user.email 'xiaoleigs@gmail.com'
         git add .
-        git commit -m 'update at $(date +"%Y%m%d-%H%M") by bot'
+        git commit -m 'update by bot'
         git push
