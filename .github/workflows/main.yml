@@ -20,11 +20,11 @@ jobs:
     - name: Check changes
       id: check_changes
       run: |
-          if git diff --name-only; then
-            echo "::set-output name=changed::true"
-          else
-            echo "::set-output name=changed::false"
-          fi
+        if [[ `git diff --name-only` ]]; then
+          echo "::set-output name=changed::true"
+        else
+          echo "::set-output name=changed::false"
+        fi
     - name: Commit files
       env:
           GITHUB_TOKEN: ${{ secrets.action_bot }}
