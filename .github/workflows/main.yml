@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - main
+on:
+  schedule:
+    - cron: '0 10 * * *'
+
 
 jobs:
   build:
