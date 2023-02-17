@@ -4968,6 +4968,7 @@ ip-asn, 146753, direct
 ip-asn, 146758, direct
 ip-asn, 146769, direct
 ip-asn, 146772, direct
+ip-asn, 146774, direct
 ip-asn, 146809, direct
 ip-asn, 146812, direct
 ip-asn, 146814, direct
@@ -4999,6 +5000,8 @@ ip-asn, 150184, direct
 ip-asn, 150323, direct
 ip-asn, 150373, direct
 ip-asn, 150374, direct
+ip-asn, 150775, direct
+ip-asn, 199932, direct
 ip-asn, 200021, direct
 ip-asn, 200078, direct
 ip-asn, 200256, direct
@@ -5007,7 +5010,6 @@ ip-asn, 200536, direct
 ip-asn, 200545, direct
 ip-asn, 200558, direct
 ip-asn, 200592, direct
-ip-asn, 200631, direct
 ip-asn, 200728, direct
 ip-asn, 200732, direct
 ip-asn, 200782, direct
