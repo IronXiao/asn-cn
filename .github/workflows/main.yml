@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: "Comment about changes we can't accept"
         env:
-          GITHUB_TOKEN: ${{ secrets.action-bot }}
+          GITHUB_TOKEN: ${{ secrets.action_bot }}
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Run Python script
