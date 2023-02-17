@@ -20,6 +20,7 @@ jobs:
     - name: Check changes
       id: check_changes
       run: |
+        git pull
         if [[ `git diff --name-only` ]]; then
           echo "::set-output name=changed::true"
         else
