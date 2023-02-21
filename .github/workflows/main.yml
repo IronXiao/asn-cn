@@ -17,11 +17,10 @@ jobs:
     - name: Check changes
       id: check_changes
       run: |
-        git pull
         if [[ `git diff --name-only` ]]; then
-          echo "::set-output name=changed::true"
+          echo "changed=true" >> $GITHUB_OUTPUT
         else
-          echo "::set-output name=changed::false"
+          echo "changed=false" >> $GITHUB_OUTPUT
         fi
     - name: Commit files
       env:
